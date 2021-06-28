@@ -7,6 +7,7 @@ alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 alias gs="git status"
 alias g="git"
+setxkbmap -option caps:swapescape
 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }

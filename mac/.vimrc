@@ -70,7 +70,7 @@ cabbrev pdf !pdflatex % && open $(sed 's/.tex/\.pdf/g' <<< %)
 cabbrev bterm bo term
 cabbrev trun bo term python3.9 %
 cabbrev trunint bo term arch -x86_64 /Library/Frameworks/Python.framework/Versions/3.9/bin/python3.9 % 
-set termwinsize=12x300
+set termwinsize=12x0
 "status line stuff
 set statusline=
 set laststatus=2
