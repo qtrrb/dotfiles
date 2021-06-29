@@ -12,7 +12,7 @@ Plug 'gko/vim-coloresque'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'qtrrb/ayu-vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set encoding=UTF-8
@@ -34,10 +34,10 @@ autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeMinimalUI=1
+let NERDTreeShowHidden=1
 "set up a colorscheme
 set termguicolors
-let ayucolors='dark'
-colorscheme ayu 
+colorscheme nord 
 "adding syntax highlighting
 if !exists('g:syntax_on')
   syntax enable
@@ -68,7 +68,7 @@ cabbrev pdf !pdflatex % && xdg-open $(sed 's/.tex/\.pdf/g' <<< %)
 "setting up a good bottom terminal 
 cabbrev bterm bo term
 cabbrev trun bo term python3 %
-set termwinsize=12x0
+set termwinsize=15x0
 "status line stuff
 set statusline=
 set laststatus=2
@@ -78,6 +78,7 @@ set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ replace\ ':''}
 set statusline+=%#Cursor#%{(mode()=='v')?'\ \ visual\ ':''}
 set statusline+=%{&paste?'\ PASTE\ ':''}
 set statusline+=%{&spell?'\ SPELL\ ':''}
+set statusline+=%#CursorLine#   " colour
 set statusline+=%R " readonly flag
 set statusline+=%M " modified [+] flag
 set statusline+=\ %t\  " short file name
